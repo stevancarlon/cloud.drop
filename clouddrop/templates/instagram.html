@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block body %}
+    <main>
+        <header>
+            <div class="toggle-menu" id="toggle-menu">
+                <div class="close-btn">
+                    <ion-icon name="close-circle-outline" class="close-icon" id="close-btn"></ion-icon>
+                </div>
+                <div>
+                    <a href="{% url 'index' %}">
+                        youtube
+                    </a>
+                </div>
+                <div>
+                    <a href="{% url 'instagram' %}">
+                        instagram
+                    </a>
+                </div>
+                <div>
+                    <a href="{% url 'twitter' %}">
+                        twitter
+                    </a>
+                </div>
+                <div>
+                    <a href="{% url 'contact' %}">
+                        contact
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.buymeacoffee.com/cloud.oaldo" target="_blank">
+                        buy me a coffee
+                    </a>
+                </div>
+                <div class="menu-last-child"></div>
+            </div>
+            <div class="img-div">
+                <a href="#">
+                    <img src="{% static 'img/cloud.png' %}">
+                </a>
+            </div>
+            <ul>
+                <div class="nav-center-btns">
+                    <li>
+                        <a href="{% url 'index' %}">
+                            youtube
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'instagram' %}">
+                            instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'twitter' %}">
+                            twitter
+                        </a>
+                    </li>
+                </div>  
+                <div class="nav-right-btns">
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.buymeacoffee.com/cloud.oaldo" target="_blank">
+                            <div class="buy-me">
+                                buy me a coffee
+                            </div>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+            <div class="toggle-button" id="toggle-trigger">
+                <ion-icon name="menu-outline" class="toggle-button-icon"></ion-icon>
+            </div>
+        </header>
+        <div class="main-container">
+            <div class="download-container">
+                <div class="blue-div">
+                </div>
+                
+                <h1>Download Instagram video</h1>
+                <p class="subtitle">Paste the url of the video and wait for your download.</p>
+                <div class="input-url">
+                        <input type="text" placeholder="paste the url here :)" id="url-input" ><input type="button" value="ok" id="ok-btn">
+                </div>
+            </div>
+            <div id="loading-box">
+                <img src="{% static 'img/loading.gif' %}" class="loading-img" id="loading-img">
+                <p class="loading-label" id="loading-label">loading...</p>
+            </div>
+            <div id="loading-box-2">
+                <div id="thumbnail-div"></div>
+                <div id="info-div">
+                    <p id="video-title">Video title</p>
+                    <p id="video-duration" class="subtitle">Duration</p>
+                </div>
+                <div id="buttons-div"></div>
+            </div>
+            
+            <div class="instructions-container">
+                <div class="instruction-text"><div class="number">1</div>Copy the url of the video</div>
+                <div class="instruction-text"><div class="number">2</div>Paste in the textbox and click ok</div>
+                <div class="instruction-text"><div class="number">3</div>Wait until the download is ready</div>
+                <div class="instruction-text"><div class="number">4</div>Choose the resolution and download it</div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/download_instagram.js' %}"></script>
+{% endblock %}

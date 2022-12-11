@@ -1,0 +1,4 @@
+Django==4.1.2
+instagrapi==1.16.30
+pytube==12.1.0
+snscrape==0.4.3.20220106

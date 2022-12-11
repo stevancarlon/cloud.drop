@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block body %}
+    <main>
+        <header>
+            <div class="toggle-menu" id="toggle-menu">
+                <div class="close-btn">
+                    <ion-icon name="close-circle-outline" class="close-icon" id="close-btn"></ion-icon>
+                </div>
+                <div>
+                    <a href="{% url 'index' %}">
+                        youtube
+                    </a>
+                </div>
+                <div>
+                    <a href="{% url 'instagram' %}">
+                        instagram
+                    </a>
+                </div>
+                <div>
+                    <a href="{% url 'twitter' %}">
+                        twitter
+                    </a>
+                </div>
+                <div>
+                    <a href="{% url 'contact' %}">
+                        contact
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.buymeacoffee.com/cloud.oaldo" target="_blank">
+                        buy me a coffee
+                    </a>
+                </div>
+                <div class="menu-last-child"></div>
+            </div>
+            <div class="img-div">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'img/cloud.png' %}">
+                </a>
+            </div>
+            <ul>
+                <div class="nav-center-btns">
+                    <li>
+                        <a href="{% url 'index' %}">
+                            youtube
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'instagram' %}">
+                            instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'twitter' %}">
+                            twitter
+                        </a>
+                    </li>
+                </div>  
+                <div class="nav-right-btns">
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.buymeacoffee.com/cloud.oaldo" target="_blank">
+                            <div class="buy-me">
+                                buy me a coffee
+                            </div>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+            <div class="toggle-button" id="toggle-trigger">
+                <ion-icon name="menu-outline" class="toggle-button-icon"></ion-icon>
+            </div>
+        </header>
+        <div class="main-container">
+            <div class="download-container">
+                <div class="contact-form">
+                    <h2>Have a suggestion?</h2>
+                    <p class="subtitle-form">Contact me</p>
+                    <form action="{% url 'contact' %}" method="POST" class="form-input">
+                        {% csrf_token %}
+                        <div>
+                            <input type="text" name="form-name" placeholder="Name">
+                        </div>
+                        <div>
+                            <input type="email" name="form-email" placeholder="Your email">
+                        </div>
+                        <div class="last-input">
+                            <textarea rows="10" placeholder="Message" name="form-message"></textarea>
+                        </div>
+                        <div class="submit-div">
+                            <input type="submit" value="Send">
+                        </div>
+                    </form>
+                </div>
+                
+                
+                <!-- <div class="input-url">
+                        <input type="text" placeholder="paste the url here :)" id="url-input" ><input type="button" value="ok" id="ok-btn">
+                </div> -->
+            </div>
+    </main>
+{% endblock %}
